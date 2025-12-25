@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: http://localhost:8080/
+**URL**: http://localhost:8080/  or https://bhoomish-crm.vercel.app/
 
 ## How can I edit this code?
 
