@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:wght@600;700&display=swap');
+
+@layer base {
+  :root {
+    /* BHOOMISH Brand Colors */
+    --background: 36 53% 97%;
+    --foreground: 153 46% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 153 46% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 153 46% 12%;
+
+    /* Deep Forest Green */
+    --primary: 153 46% 18%;
+    --primary-foreground: 36 53% 97%;
+
+    /* Warm Orange Accent */
+    --secondary: 38 91% 55%;
+    --secondary-foreground: 153 46% 12%;
+
+    --muted: 36 30% 92%;
+    --muted-foreground: 153 20% 40%;
+
+    /* Orange Accent */
+    --accent: 38 91% 55%;
+    --accent-foreground: 153 46% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success Green */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning Amber */
+    --warning: 38 92% 50%;
+    --warning-foreground: 153 46% 12%;
+
+    --border: 36 30% 88%;
+    --input: 36 30% 88%;
+    --ring: 153 46% 18%;
+
+    --radius: 0.75rem;
+
+    /* Chart Colors */
+    --chart-1: 153 46% 25%;
+    --chart-2: 38 91% 55%;
+    --chart-3: 142 71% 45%;
+    --chart-4: 24 80% 55%;
+    --chart-5: 200 70% 50%;
+
+    /* Sidebar */
+    --sidebar-background: 153 46% 14%;
+    --sidebar-foreground: 36 53% 95%;
+    --sidebar-primary: 38 91% 55%;
+    --sidebar-primary-foreground: 153 46% 12%;
+    --sidebar-accent: 153 40% 20%;
+    --sidebar-accent-foreground: 36 53% 95%;
+    --sidebar-border: 153 40% 22%;
+    --sidebar-ring: 38 91% 55%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(153 46% 18%), hsl(153 46% 25%));
+    --gradient-accent: linear-gradient(135deg, hsl(38 91% 55%), hsl(24 80% 55%));
+    --gradient-success: linear-gradient(135deg, hsl(142 71% 45%), hsl(153 46% 35%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(36 30% 98%));
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(153 46% 18% / 0.08);
+    --shadow-medium: 0 4px 16px -4px hsl(153 46% 18% / 0.12);
+    --shadow-glow: 0 0 20px hsl(38 91% 55% / 0.3);
+  }
+
+  .dark {
+    --background: 153 46% 8%;
+    --foreground: 36 53% 95%;
+
+    --card: 153 46% 12%;
+    --card-foreground: 36 53% 95%;
+
+    --popover: 153 46% 12%;
+    --popover-foreground: 36 53% 95%;
+
+    --primary: 38 91% 55%;
+    --primary-foreground: 153 46% 8%;
+
+    --secondary: 153 40% 20%;
+    --secondary-foreground: 36 53% 95%;
+
+    --muted: 153 40% 18%;
+    --muted-foreground: 36 30% 65%;
+
+    --accent: 38 91% 55%;
+    --accent-foreground: 153 46% 8%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 153 46% 8%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 153 46% 8%;
+
+    --border: 153 40% 20%;
+    --input: 153 40% 20%;
+    --ring: 38 91% 55%;
+
+    --sidebar-background: 153 46% 6%;
+    --sidebar-foreground: 36 53% 95%;
+    --sidebar-primary: 38 91% 55%;
+    --sidebar-primary-foreground: 153 46% 8%;
+    --sidebar-accent: 153 40% 14%;
+    --sidebar-accent-foreground: 36 53% 95%;
+    --sidebar-border: 153 40% 16%;
+    --sidebar-ring: 38 91% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/80 backdrop-blur-md border border-border/50;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-pulse-subtle {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseSoft {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.85;
+    }
+  }
+
+  .stat-card {
+    @apply relative overflow-hidden rounded-xl border bg-card p-5 shadow-soft transition-all duration-300 hover:shadow-medium hover:-translate-y-0.5;
+  }
+
+  .stat-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: var(--gradient-accent);
+  }
+
+  .stat-card:hover::before {
+    @apply opacity-5;
+  }
+}
+
+/* Recharts customization */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: hsl(var(--border));
+  stroke-opacity: 0.5;
+}
+
+.recharts-text {
+  fill: hsl(var(--muted-foreground));
+  font-size: 12px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
